@@ -19,16 +19,16 @@ def main():
         if args.same_folder_and_name:
             file_path = "/".join(args.file.split("/")[:-1]) + "/"
             file_name = args.file.split("/")[-1].split(".")[0]
-            output_path = file_path + file_name + ".PNG"
+            output_path = file_path + file_name + ".png"
             JpgToPng(args.file, output_path)
 
         elif args.output:
             file_path = args.output
-            if file_path[-4:] == ".PNG":
+            if file_path[-4:] == ".png":
                 output_path = file_path
                 JpgToPng(args.file, output_path)
             else:
-                output_path = file_path + ".PNG"
+                output_path = file_path + ".png"
                 JpgToPng(args.file, output_path)
         else:
             parser.print_help()
